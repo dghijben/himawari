@@ -7,7 +7,7 @@ angular.module('himawariApp', [
   'ngSanitize',
   'ui.router'
 ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -25,6 +25,7 @@ angular.module('himawariApp', [
         templateUrl: 'views/staff.html',
         controller: 'StaffCtrl'
       });
+    $locationProvider.html5Mode(true);
   });
 
 
