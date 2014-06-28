@@ -10,11 +10,11 @@ angular.module('himawariApp', [
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
-      .state('main', {
-        url: '/main',
-        templateUrl: 'views/main.html',
+      .state('home', {
+        url: '/home',
+        templateUrl: 'views/home.html',
         controller:'MainCtrl'
       })
       .state('benefits', {
