@@ -356,7 +356,7 @@ module.exports = function (grunt) {
           },
           {
             src: 'dist/bower_components/font-awesome/fonts/*',
-            dest: '/bower_components/fonts/'
+            dest: '/bower_components/font-awesome/fonts/'
           }
         ]
       }
