@@ -10,10 +10,10 @@ angular.module('himawariApp', [
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('home', {
-        url: '/home',
+        url: '/',
         templateUrl: 'views/home.html',
         controller:'MainCtrl'
       })
@@ -42,6 +42,14 @@ angular.module('himawariApp', [
         url: '/founders',
         templateUrl: 'views/founders.html',
         controller: 'FoundersCtrl'
+      })
+      .state('founders.yen', {
+        url: '/yen',
+        template: 'Founder 1'
+      })
+      .state('founders.masa', {
+        url: '/masa',
+        template: 'Founder 2'
       })
       .state('programs', {
         url: '/programs',

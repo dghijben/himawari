@@ -32,27 +32,29 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="home">Himawari Duhoc</a>
-        </div>
-        <ul class="nav navbar-nav">
+
+    <div id="site-wrapper">
+  
+       <div id="site-canvas">
+        
+         <div id="site-menu">
+           <a href="#" class="toggle-nav"><i class="fa fa-times"></i></a>
+           <ul>
             <li><a ui-sref="home">Home</a></li>
             <li><a ui-sref="benefits">Benefits</a></li>
             <li><a ui-sref="founders ">Founders</a></li>
             <li><a ui-sref="programs">Programs</a></li>
             <li><a ui-sref="activities">Activities</a></li>
-        </ul>
-    </nav>
+           </ul>
+         </div>
+           
+         <a href="#" class="toggle-nav btn btn-default"><i class="fa fa-bars"></i></a>
+         
+         <div ui-view></div>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
+      </div>
 
-      <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-        <div ui-view></div>
-
-    </div>
+    </div>  
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -67,6 +69,33 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+
+    <script>
+
+      $(function() {
+        
+          // Toggle Nav on Click
+          $('.toggle-nav').click(function() {
+              // Calling a function in case you want to expand upon this.
+              toggleNav();
+          });    
+      });
+
+      /*========================================
+      =            CUSTOM FUNCTIONS            =
+      ========================================*/
+      function toggleNav() {
+          if ($('#site-wrapper').hasClass('show-nav')) {
+              // Do things on Nav Close
+              $('#site-wrapper').removeClass('show-nav');
+          } else {
+              // Do things on Nav Open
+              $('#site-wrapper').addClass('show-nav');
+          }
+
+          //$('#site-wrapper').toggleClass('show-nav');
+      }
+    </script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
