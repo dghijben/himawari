@@ -331,6 +331,30 @@ module.exports = function (grunt) {
           'Cache-Control': 'max-age=630720000, public',
           'Expires': new Date(Date.now() + 63072000000).toUTCString()
         }
+      },
+      dev: {
+        upload: [
+          {
+            src: 'dist/*',
+            dest: '/'
+          },
+          {
+            src: 'dist/scripts/*.*',
+            dest: '/scripts/'
+          },
+          {
+            src: 'dist/styles/*.*',
+            dest: '/styles/'
+          },
+          {
+            src: 'dist/views/*',
+            dest: '/views/'
+          },
+          {
+            src: 'dist/images/*',
+            dest: '/images/'
+          }
+        ]
       }
     }
   });
