@@ -12,7 +12,7 @@ angular.module('himawariApp', [
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('index', {
-        url: '/',
+        url: '/home',
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
       })
