@@ -37,20 +37,21 @@
   
        <div id="site-canvas">
         
-         <div id="site-menu">
-           <a href="#" class="toggle-nav"><i class="fa fa-times"></i></a>
-           <ul>
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="benefits">Benefits</a></li>
-            <li><a ui-sref="founders ">Founders</a></li>
-            <li><a ui-sref="programs">Programs</a></li>
-            <li><a ui-sref="activities">Activities</a></li>
-           </ul>
-         </div>
-           
-         <a href="#" class="toggle-nav btn btn-default"><i class="fa fa-bars"></i></a>
+        <div id="site-menu">
+          <a href="#" class="toggle-nav"><i class="fa fa-times"></i></a>
+          <ul>
+            <li><a class="toggle-nav" ui-sref="home">Home</a></li>
+            <li><a class="toggle-nav" ui-sref="benefits">Benefits</a></li>
+            <li><a class="toggle-nav" ui-sref="founders ">Founders</a></li>
+            <li><a class="toggle-nav" ui-sref="programs">Programs</a></li>
+            <li><a class="toggle-nav" ui-sref="activities">Activities</a></li>
+          </ul>
+        </div>
+        <div class="topbar">
+          <a href="#" class="toggle-nav btn btn-default"><i class="fa fa-bars"></i></a>
+        </div>
          
-         <div ui-view></div>
+        <div ui-view></div>
 
       </div>
 
