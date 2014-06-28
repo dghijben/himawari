@@ -1,7 +1,7 @@
 'use strict';
 
 
-  angular.module('himawariApp', [
+angular.module('himawariApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -15,8 +15,8 @@
         url: '/',
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
-      })
-  })
+      });
+  });
 
 
 
