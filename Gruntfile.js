@@ -353,9 +353,7 @@ module.exports = function (grunt) {
           {
             src: 'dist/images/*',
             dest: '/images/'
-          },
-            src: 'dist/bower_components/*',
-            dest: '/bower_components'
+          }
         ]
       }
     }
