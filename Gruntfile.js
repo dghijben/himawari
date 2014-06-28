@@ -323,8 +323,8 @@ module.exports = function (grunt) {
     },
     s3: {
       options: {
-        bucket: 'ng-tokyo.io',
-        region: 'ap-northeast-1',
+        bucket: 'hima-wari',
+        region: 'us-west-2',
         access: 'public-read',
         headers: {
               // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
