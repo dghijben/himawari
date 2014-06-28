@@ -11,12 +11,12 @@ angular.module('himawariApp', [
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $urlRouterProvider.otherwise('/');
     $stateProvider
-      .state('index', {
+      .state('home', {
         url: '/home',
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
       })
-      .state('index.paragraph', {
+      .state('home.paragraph', {
         url: '/paragraph',
         template: 'I could sure use a drink right now.'
       })
