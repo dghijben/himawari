@@ -15,6 +15,15 @@ angular.module('himawariApp', [
         url: '/',
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
+      })
+      .state('index.paragraph', {
+        url: '/paragraph',
+        template: 'I could sure use a drink right now.'
+      })
+      .state('staff', {
+        url: '/staff',
+        templateUrl: 'views/staff.html',
+        controller: 'StaffCtrl'
       });
   });
 
