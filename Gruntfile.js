@@ -320,6 +320,18 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    s3: {
+      options: {
+        bucket: 'ng-tokyo.io',
+        region: 'ap-northeast-1',
+        access: 'public-read',
+        headers: {
+              // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+          'Cache-Control': 'max-age=630720000, public',
+          'Expires': new Date(Date.now() + 63072000000).toUTCString()
+        }
+      }
     }
   });
 
@@ -364,5 +376,10 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    's3'
   ]);
 };
