@@ -17,10 +17,6 @@ angular.module('himawariApp', [
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
       })
-      .state('main.paragraph', {
-        url: '/paragraph',
-        template: 'I could sure use a drink right now.'
-      })
       .state('benefits', {
         url: '/benefits',
         templateUrl: 'views/benefits.html',
