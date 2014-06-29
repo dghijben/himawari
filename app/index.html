@@ -38,8 +38,11 @@
        <div id="site-canvas">
         
         <div id="site-menu">
-          <a href="#" class="toggle-nav"><i class="fa fa-times"></i></a>
-          <ul>
+          <!-- <a href="#" class="toggle-nav"><i class="fa fa-2x fa-times"></i></a> -->
+          <div id="site-menu-logo">
+            <img src="http://placehold.it/150x60" alt="">
+          </div>
+          <ul class="unstyled">
             <li><a class="toggle-nav" ui-sref="home">Home</a></li>
             <li><a class="toggle-nav" ui-sref="benefits">Benefits</a></li>
             <li><a class="toggle-nav" ui-sref="founders ">Founders</a></li>
@@ -48,7 +51,9 @@
           </ul>
         </div>
         <div class="topbar">
-          <a href="#" class="toggle-nav btn btn-default"><i class="fa fa-bars"></i></a>
+          <div class="hamburger">
+            <a href="#" class="toggle-nav"><i class="fa fa-2x fa-bars"></i></a>
+          </div>
         </div>
          
         <div ui-view></div>

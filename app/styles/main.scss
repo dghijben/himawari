@@ -14,17 +14,16 @@ body {
     color: #333;
 }
 
-.navbar {
-  margin-bottom: 0px;
-}
-
-.navbar .nav > li > a {
-  padding: none;
-}
 .leaderboard {
   background: #009688;
   height: 300px;
   /*border-top: 20px solid #00796b;*/
+}
+.leaderboard h1 {
+  position: absolute;
+  color: #FFFFFF;
+  left: 100px;
+  top: 150px;
 }
 
 #site-wrapper {
@@ -64,9 +63,45 @@ body {
   position: absolute;
   top: 0;
   left: -200px;
-  background: #b2dfdb;
+  background: #FFFFFF;
   padding: 15px;
 }
+
+#site-menu-logo {
+  border-bottom: 1px solid #EEEEEE;
+}
+#site-menu-logo img {
+  display: block;
+  margin: 0 auto;
+}
+#site-menu li {
+  padding: 10px;
+}
+#site-menu a,
+#site-menu a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+#site-menu a:active {
+  color: #009688;
+}
+
 .topbar {
   background: #009688;
+  position: absolute;
+  top: 0px;
+}
+.hamburger a,
+.hamburger a:hover {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  color: #000;
+}
+.subleader {
+  background: #EEEEEE;
+  padding-left: 70px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
