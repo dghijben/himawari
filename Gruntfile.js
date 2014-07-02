@@ -357,6 +357,10 @@ module.exports = function (grunt) {
           {
             src: 'dist/bower_components/font-awesome/fonts/*',
             dest: '/bower_components/font-awesome/fonts/'
+          },
+          {
+            src: 'dist/bower_components/*',
+            dest: '/bower_components/'
           }
         ]
       }
