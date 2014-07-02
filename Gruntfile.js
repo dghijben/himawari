@@ -360,31 +360,31 @@ module.exports = function (grunt) {
           },
           {
             src: 'dist/bower_components/core-toolbar/core-toolbar.html',
-            dest: '/bower_components/core-toolbar/core-toolbar.html'
+            dest: 'bower_components/core-toolbar/core-toolbar.html'
           },
           {
             src: 'dist/bower_components/core-menu/core-menu.html',
-            dest: '/bower_components/core-menu/core-menu.html'
+            dest: 'bower_components/core-menu/core-menu.html'
           },
           {
             src: 'dist/bower_components/core-item/core-item.html',
-            dest: '/bower_components/core-item/core-item.html'
+            dest: 'bower_components/core-item/core-item.html'
           },
           {
             src: 'dist/bower_components/core-header-panel/core-header-panel.html',
-            dest: '/bower_components/core-header-panel/core-header-panel.html'
+            dest: 'bower_components/core-header-panel/core-header-panel.html'
           },
           {
             src: 'dist/bower_components/core-drawer-panel/core-drawer-panel.html',
-            dest: '/bower_components/core-drawer-panel/core-drawer-panel.html'
+            dest: 'bower_components/core-drawer-panel/core-drawer-panel.html'
           },
           {
             src: 'dist/bower_components/core-icons/core-icons.html',
-            dest: '/bower_components/core-icons/core-icons.html'
+            dest: 'bower_components/core-icons/core-icons.html'
           },
           {
             src: 'dist/bower_components/paper-icon-button/paper-icon-button.html',
-            dest: '/bower_components/paper-icon-button/paper-icon-button.html'
+            dest: 'bower_components/paper-icon-button/paper-icon-button.html'
           }
         ]
       }
