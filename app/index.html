@@ -4,6 +4,8 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
+    <!-- 1. Load platform.js for polyfill support. -->
+    <script src="bower_components/platform/platform.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -14,13 +16,49 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+    
+    <!-- Use an HTML Import to bring in the element. -->
+   
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="bower_components/core-icons/core-icons.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+
+    <style>
+        body {
+        font-family: sans-serif;
+      }
+      core-header-panel {
+        background: white;
+      }
+      core-toolbar {
+        background-color: #03A9F4;
+      }
+      #navheader {
+        background-color: #56BA89;
+      }
+      .content {
+        padding: 20px;
+      }
+      /* drawer is always visible on a wide screen
+         so menu button isn't required */
+      core-drawer-panel:not([narrow]) #navicon {
+        display: none;
+      }
+    </style>
 
     <!-- CSS (load bootstrap) -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style>
         .navbar { border-radius:0; }
     </style>
-</head>
+  </head>
   <body ng-app="himawariApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -32,35 +70,60 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <core-drawer-panel id="drawerPanel">
 
-    <div id="site-wrapper">
-  
-       <div id="site-canvas">
-        
-        <div id="site-menu">
-          <!-- <a href="#" class="toggle-nav"><i class="fa fa-2x fa-times"></i></a> -->
+      <core-header-panel drawer>
+        <core-toolbar id="navheader'">
           <div id="site-menu-logo">
             <img src="http://placehold.it/150x60" alt="">
           </div>
-          <ul class="unstyled">
-            <li><a class="toggle-nav" ui-sref="home">Home</a></li>
-            <li><a class="toggle-nav" ui-sref="benefits">Benefits</a></li>
-            <li><a class="toggle-nav" ui-sref="founders ">Founders</a></li>
-            <li><a class="toggle-nav" ui-sref="programs">Programs</a></li>
-            <li><a class="toggle-nav" ui-sref="activities">Activities</a></li>
-          </ul>
-        </div>
-        <div class="topbar">
-          <div class="hamburger">
-            <a href="#" class="toggle-nav"><i class="fa fa-2x fa-bars"></i></a>
-          </div>
-        </div>
-         
-        <div ui-view></div>
+        </core-toolbar>
+        <core-menu>
+          <core-item label="Home" ui-sref="home"></core-item>
+          <core-item label="Benefits" ui-sref="benefits"></core-item>
+          <core-item label="Founders" ui-sref="founders"></core-item>
+          <core-item label="Programs" ui-sref="programs"></core-item>
+          <core-item label="Activities" ui-sref="activities"></core-item>
+        </core-menu>
+       </core-header-panel>
 
+      <core-header-panel main>
+        <core-toolbar id="mainheader">
+          <paper-icon-button 
+            id="navicon" icon="menu"></paper-icon-button>
+          <span flex>Title</span>
+        </core-toolbar>
+        <div class="content">
+          <div ui-view></div>
+        </div>
+      </core-header-panel>
+
+    </core-drawer-panel>
+
+    <!--<core-scaffold>
+
+      <core-header-panel navigation flex id="drawerPanel">
+        <core-toolbar id="navheader">
+          <div id="site-menu-logo">
+            <img src="http://placehold.it/150x60" alt="">
+          </div>
+        </core-toolbar>
+        <core-menu>
+          <core-item label="Home" ui-sref="home"></core-item>
+          <core-item label="Benefits" ui-sref="benefits"></core-item>
+          <core-item label="Founders" ui-sref="founders"></core-item>
+          <core-item label="Programs" ui-sref="programs"></core-item>
+          <core-item label="Activities" ui-sref="activities"></core-item>
+        </core-menu>
+      </core-header-panel>
+      
+      <span tool>Title</span>
+
+      <div class="content">
+          <div ui-view></div>
       </div>
 
-    </div>  
+    </core-scaffold>-->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -75,7 +138,16 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-
+    <script>
+            /* for scaffold web component */
+      document.addEventListener('polymer-ready', function() {
+        var navicon = document.getElementById('navicon');
+        var drawerPanel = document.getElementById('drawerPanel');
+        navicon.addEventListener('click', function() {
+          drawerPanel.togglePanel();
+        });
+      });
+    </script>
     <script>
 
       $(function() {
